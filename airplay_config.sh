@@ -31,3 +31,4 @@ sudo patch /etc/init.d/shairport << EOT
   NICE=0
 EOT
 tst sudo useradd -g audio shairport
+tst sudo service shairport start

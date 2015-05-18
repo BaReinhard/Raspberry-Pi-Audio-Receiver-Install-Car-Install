@@ -37,6 +37,9 @@ tst sudo chmod 755 /usr/local/bin/say.sh
 
 tst sudo cp usr_local_bin/bluezutils.py /usr/local/bin
 
+
+if [ -f /etc/udev/rules.d/99-input.rules ]; then
+
 sudo patch /etc/udev/rules.d/99-input.rules << EOT
 ***************
 *** 1 ****
@@ -44,6 +47,19 @@ sudo patch /etc/udev/rules.d/99-input.rules << EOT
   SUBSYSTEM=="input", GROUP="input", MODE="0660"
 + KERNEL=="input[0-9]*", RUN+="/usr/local/bin/bluez-udev"
 EOT
+
+else
+
+tst sudo touch /etc/udev/rules.d/99-input.rules
+tst sudo chmod 666 /etc/udev/rules.d/99-input.rules
+tst cat  << EOT > /etc/udev/rules.d/99-input.rules
+SUBSYSTEM=="input", GROUP="input", MODE="0660"
+KERNEL=="input[0-9]*", RUN+="/usr/local/bin/bluez-udev"
+EOT
+
+fi
+
+tst sudo chmod 644 /etc/udev/rules.d/99-input.rules
 
 sudo patch /etc/bluetooth/main.conf << EOT
 ***************
