@@ -14,9 +14,9 @@ function tst {
 
 tst cd ~
 tst sudo apt-get -y install  libao-dev libssl-dev git avahi-utils libwww-perl
-tst mkdir projects
+mkdir projects
 tst cd projects
-tst mkdir airplay-audio-project
+ mkdir airplay-audio-project
 tst cd airplay-audio-project
 tst git clone https://github.com/njh/perl-net-sdp.git
 tst cd perl-net-sdp
