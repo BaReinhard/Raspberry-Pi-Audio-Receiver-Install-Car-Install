@@ -4,7 +4,7 @@ read -p "Airplay device name: " MYNAME
 
 #--------------------------------------------------------------------
 function tst {
-    echo "Executing: $*"
+    echo "===> Executing: $*"
     if ! $*; then
         echo "Exiting scrip due to error from: $*"
         exit 1
@@ -30,5 +30,5 @@ sudo patch /etc/init.d/shairport << EOT
 ! AP_NAME=${MYNAME}
   NICE=0
 EOT
-tst sudo useradd -g audio shairport
+sudo useradd -g audio shairport
 tst sudo service shairport start

@@ -4,7 +4,7 @@ read -p "Bluetooth device name: " BT_NAME
 
 #--------------------------------------------------------------------
 function tst {
-    echo "Executing: $*"
+    echo "===> Executing: $*"
     if ! $*; then
         echo "Exiting scrip due to error from: $*"
         exit 1

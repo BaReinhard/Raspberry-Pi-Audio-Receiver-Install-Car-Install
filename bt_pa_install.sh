@@ -5,7 +5,7 @@ pulse_version="5.0"
 
 #--------------------------------------------------------------------
 function tst {
-    echo "Executing: $*"
+    echo "===> Executing: $*"
     if ! $*; then
         echo "Exiting scrip due to error from: $*"
         exit 1
