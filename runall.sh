@@ -21,10 +21,10 @@ tst ./bt_pa_prep.sh | tee -a $log
 echo "--------------------------------------------" | tee -a $log
 tst ./bt_pa_install.sh | tee -a $log
 echo "--------------------------------------------" | tee -a $log
-#echo "${MYNAME}" | tst ./bt_pa_config.sh | tee -a $log
+echo "${MYNAME}" | tst ./bt_pa_config.sh | tee -a $log
 echo "--------------------------------------------" | tee -a $log
 tst ./airplay_install.sh | tee -a $log
 echo "--------------------------------------------" | tee -a $log
-#echo "${MYNAME}" | tst ./airplay_config.sh | tee -a $log
+echo "${MYNAME}" | tst ./airplay_config.sh | tee -a $log
 echo "--------------------------------------------" | tee -a $log
 echo "Ending at @ `date`" | tee -a $log
