@@ -52,7 +52,7 @@ else
 
 tst sudo touch /etc/udev/rules.d/99-input.rules
 tst sudo chmod 666 /etc/udev/rules.d/99-input.rules
-tst cat  << EOT > /etc/udev/rules.d/99-input.rules
+sudo cat  << EOT > /etc/udev/rules.d/99-input.rules
 SUBSYSTEM=="input", GROUP="input", MODE="0660"
 KERNEL=="input[0-9]*", RUN+="/usr/local/bin/bluez-udev"
 EOT
