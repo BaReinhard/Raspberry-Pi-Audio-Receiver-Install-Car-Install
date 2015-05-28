@@ -86,11 +86,33 @@ EOT
 
 sudo patch /etc/pulse/daemon.conf << EOT
 ***************
-*** 54,55 ****
---- 54,56 ----
+*** 54,57 ****
   ; resample-method = speex-float-1
-+ resample-method = speex-fixed-2
-  ; enable-remixing = yes
+! ; enable-remixing = yes
+! ; enable-lfe-remixing = no
+
+--- 54,58 ----
+  ; resample-method = speex-float-1
+! resample-method = speex-fixed-2
+! enable-remixing = no
+! enable-lfe-remixing = no
+
+***************
+*** 78,84 ****
+  ; alternate-sample-rate = 48000
+! ; default-sample-channels = 2
+  ; default-channel-map = front-left,front-right
+
+! ; default-fragments = 4
+! ; default-fragment-size-msec = 25
+
+--- 79,85 ----
+  ; alternate-sample-rate = 48000
+! default-sample-channels = 2
+  ; default-channel-map = front-left,front-right
+
+! default-fragments = 10
+! default-fragment-size-msec = 10
 EOT
 
 sudo patch /etc/pulse/system.pa << EOT
@@ -116,8 +138,10 @@ sudo patch /etc/pulse/system.pa << EOT
 EOT
 
 
-sudo service bluetooth start
-sudo service pulseaudio start
-sudo service bluetooth-agent start
+#sudo service bluetooth start &
+#sudo service pulseaudio start &
+#sudo service bluetooth-agent start &
+
+sleep 5
 
 echo "Done! You should reboot now"
