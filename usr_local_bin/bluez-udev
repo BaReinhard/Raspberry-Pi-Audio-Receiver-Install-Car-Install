@@ -18,10 +18,10 @@ if [ "$action" = "add" ]; then
 discoverable off
 EOT
     amixer cset numid=3 1
-    amixer set PCM 90%
+    amixer cset numid=3 90%
     #espeak -s 160 -k 1 "Device, $bt_name Connected"
     /usr/local/bin/say.sh "Device, $bt_name Connected"
-    amixer set PCM 100%
+    amixer cset numid=3 100%
     sleep 1
     pactl set-sink-volume 0 65537
 
@@ -46,8 +46,8 @@ EOT
         pactl unload-module $handle
     done
     sleep 5
-    amixer set PCM 90%
+    amixer cset numid=3 90%
     #espeak -s 160 -k 1 "Device, $bt_name Disconnected"
     /usr/local/bin/say.sh "Device, $bt_name Disconnected"
-    amixer set PCM 100%
+    amixer cset numid=3 100%
 fi
