@@ -67,7 +67,7 @@ class Agent(dbus.service.Object):
 	def RequestPinCode(self, device):
 		print("RequestPinCode (%s)" % (device))
 		set_trusted(device)
-		return ask("Enter PIN Code: ")
+		return "0000"
 
 	@dbus.service.method(AGENT_INTERFACE,
 					in_signature="o", out_signature="u")
@@ -135,7 +135,7 @@ if __name__ == '__main__':
 
 	bus = dbus.SystemBus()
 
-	capability = "KeyboardDisplay"
+	capability = "NoInputNoOutput"
 
 	parser = OptionParser()
 	parser.add_option("-i", "--adapter", action="store",
