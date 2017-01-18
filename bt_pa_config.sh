@@ -1,5 +1,19 @@
 #!/bin/bash
 
+#The bluetooth device can appear as a number of things.
+#Change the line '+ Class = 0x200414' below to one of the following classes;
+# 0x200418 - Headphones
+# 0x200414 - Loudspeaker (default)
+# 0x200420 - Car Audio
+# 0x200434 - Car audio, Loudspeaker
+# 0x200438 - Car Audio, Headphones
+#
+# All of the above classes show the headphone icon on iOS when connected.
+# If you wish to not have that icon then use one of the following;
+# 0x20041C - Headphones, Portable Audio / Portable Audio
+# 0x20043C - Headphones, Portable Audio, Car audio / Portable Audio, Car audio
+
+
 read -p "Bluetooth device name: " BT_NAME
 
 #--------------------------------------------------------------------
@@ -77,7 +91,7 @@ sudo patch /etc/bluetooth/main.conf << EOT
 *** 11,12 ****
 --- 12,14 ----
   #Class = 0x000100
-+ Class = 0x20043C
++ Class = 0x200414
 
 ***************
 *** 15,17 ****
