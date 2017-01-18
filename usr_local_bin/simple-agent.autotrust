@@ -57,7 +57,7 @@ class Agent(dbus.service.Object):
 					in_signature="os", out_signature="")
 	def AuthorizeService(self, device, uuid):
 		print("AuthorizeService (%s, %s)" % (device, uuid))
-		authorize = ask("Authorize connection (yes/no): ")
+		authorize = "yes"
 		if (authorize == "yes"):
 			return
 		raise Rejected("Connection rejected by user")
@@ -103,7 +103,7 @@ class Agent(dbus.service.Object):
 					in_signature="o", out_signature="")
 	def RequestAuthorization(self, device):
 		print("RequestAuthorization (%s)" % (device))
-		auth = ask("Authorize? (yes/no): ")
+		auth = "yes"
 		if (auth == "yes"):
 			return
 		raise Rejected("Pairing rejected")
