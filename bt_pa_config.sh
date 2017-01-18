@@ -96,12 +96,13 @@ sudo patch /etc/pulse/daemon.conf << EOT
 
 --- 54,58 ----
   ; resample-method = speex-float-1
-! resample-method = speex-fixed-2
+! resample-method = ffmpeg
 ! enable-remixing = no
 ! enable-lfe-remixing = no
 
 ***************
 *** 78,84 ****
+! ; default-sample-rate = 44100
   ; alternate-sample-rate = 48000
 ! ; default-sample-channels = 2
   ; default-channel-map = front-left,front-right
@@ -110,6 +111,7 @@ sudo patch /etc/pulse/daemon.conf << EOT
 ! ; default-fragment-size-msec = 25
 
 --- 79,85 ----
+! default-sample-rate = 44100
   ; alternate-sample-rate = 48000
 ! default-sample-channels = 2
   ; default-channel-map = front-left,front-right
