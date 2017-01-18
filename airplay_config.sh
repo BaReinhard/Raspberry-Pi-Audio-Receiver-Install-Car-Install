@@ -6,7 +6,7 @@ read -p "Airplay device name: " MYNAME
 function tst {
     echo "===> Executing: $*"
     if ! $*; then
-        echo "Exiting scrip due to error from: $*"
+        echo "Exiting script due to error from: $*"
         exit 1
     fi
 }
@@ -14,7 +14,7 @@ function tst {
 
 # Configure shairplay
 
-tst cd ~/projects/airplay-audio-project/shairport
+tst cd ~/raspberry-pi-audio-receiver-install/shairport
 tst sudo cp scripts/debian/init.d/shairport /etc/init.d/
 tst sudo chmod +x /etc/init.d/shairport
 tst sudo update-rc.d shairport defaults
