@@ -6,7 +6,7 @@ read -p "Bluetooth device name: " BT_NAME
 function tst {
     echo "===> Executing: $*"
     if ! $*; then
-        echo "Exiting scrip due to error from: $*"
+        echo "Exiting script due to error from: $*"
         exit 1
     fi	
 }
@@ -38,9 +38,9 @@ tst sudo chmod 755 /usr/local/bin/say.sh
 tst sudo cp usr_local_bin/bluezutils.py /usr/local/bin
 
 
-if [ -f /etc/udev/rules.d/99-input.rules ]; then
+if [ -f /etc/udev/rules.d/99-com.rules ]; then
 
-sudo patch /etc/udev/rules.d/99-input.rules << EOT
+sudo patch /etc/udev/rules.d/99-com.rules << EOT
 ***************
 *** 1 ****
 --- 1,2 ----
@@ -50,8 +50,8 @@ EOT
 
 else
 
-tst sudo touch /etc/udev/rules.d/99-input.rules
-tst sudo chmod 666 /etc/udev/rules.d/99-input.rules
+tst sudo touch /etc/udev/rules.d/99-com.rules
+tst sudo chmod 666 /etc/udev/rules.d/99-com.rules
 sudo cat  << EOT > /etc/udev/rules.d/99-input.rules
 SUBSYSTEM=="input", GROUP="input", MODE="0660"
 KERNEL=="input[0-9]*", RUN+="/usr/local/bin/bluez-udev"
@@ -59,7 +59,7 @@ EOT
 
 fi
 
-tst sudo chmod 644 /etc/udev/rules.d/99-input.rules
+tst sudo chmod 644 /etc/udev/rules.d/99-com.rules
 
 sudo patch /etc/bluetooth/main.conf << EOT
 ***************
@@ -72,7 +72,7 @@ sudo patch /etc/bluetooth/main.conf << EOT
 *** 11,12 ****
 --- 12,14 ----
   #Class = 0x000100
-+ Class = 0x20041C
++ Class = 0x20043C
 
 ***************
 *** 15,17 ****
