@@ -14,9 +14,6 @@ function tst {
 
 tst cd `dirname $0`
 
-tst sudo echo "PRETTY_HOSTNAME=$BT_NAME" >> /tmp/machine-info
-tst sudo cp /tmp/machine-info /etc/machine-info
-
 tst sudo cp init.d/pulseaudio /etc/init.d
 tst sudo chmod +x /etc/init.d/pulseaudio
 tst sudo update-rc.d pulseaudio defaults
@@ -38,7 +35,10 @@ tst sudo chmod 755 /usr/local/bin/simple-agent.autotrust
 tst sudo cp usr_local_bin/say.sh /usr/local/bin
 tst sudo chmod 755 /usr/local/bin/say.sh
 
-tst sudo cp usr_local_bin/bluezutils.py /usr/local/bin
+tst sudo echo "PRETTY_HOSTNAME=$BT_NAME" >> /tmp/machine-info
+tst sudo cp /tmp/machine-info /etc
+
+tst sudo cp misc_setup/daemon.conf /etc/pulse
 
 
 if [ -f /etc/udev/rules.d/99-com.rules ]; then
@@ -85,39 +85,6 @@ sudo patch /etc/bluetooth/main.conf << EOT
 --- 17,19 ----
   # 0 = disable timer, i.e. stay discoverable forever
 ! DiscoverableTimeout = 0
-EOT
-
-sudo patch /etc/pulse/daemon.conf << EOT
-***************
-*** 54,57 ****
-  ; resample-method = speex-float-1
-! ; enable-remixing = yes
-! ; enable-lfe-remixing = no
-
---- 54,58 ----
-  ; resample-method = speex-float-1
-! resample-method = ffmpeg
-! enable-remixing = no
-! enable-lfe-remixing = no
-
-***************
-*** 78,84 ****
-! ; default-sample-rate = 44100
-  ; alternate-sample-rate = 48000
-! ; default-sample-channels = 2
-  ; default-channel-map = front-left,front-right
-
-! ; default-fragments = 4
-! ; default-fragment-size-msec = 25
-
---- 79,85 ----
-! default-sample-rate = 44100
-  ; alternate-sample-rate = 48000
-! default-sample-channels = 2
-  ; default-channel-map = front-left,front-right
-
-! default-fragments = 10
-! default-fragment-size-msec = 10
 EOT
 
 sudo patch /etc/pulse/system.pa << EOT
