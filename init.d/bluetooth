@@ -1,3 +1,4 @@
+#!/bin/sh -e
 ### BEGIN INIT INFO
 # Provides:            bluetooth
 # Required-Start:      $local_fs $syslog dbus
@@ -11,7 +12,7 @@
 
 DESC=bluetoothd
 DAEMON=/usr/libexec/bluetooth/bluetoothd
-SSD_OPTIONS="--oknodo --quiet --exec $DAEMON"
+SSD_OPTIONS="--oknodo --quiet --exec $DAEMON --plugin=a2dp"
 HCI=hci0
 
 case "${1}" in
