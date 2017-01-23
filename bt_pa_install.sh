@@ -16,7 +16,8 @@ tst sudo apt-get install bluez pulseaudio pulseaudio-module-bluetooth
 # Install dbus for python
 tst sudo apt-get install python-dbus
 
-
+# Install espeak & mplayer
+tst sudo apt-get install -qy espeak mplayer
 
 # Create users and priviliges for Bluez-Pulse Audio interaction - most should already exist
 tst sudo addgroup --system pulse
