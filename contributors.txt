@@ -1,3 +1,2 @@
-Martin Engström
-Aden Beckitt
-Chingis Dugarzhapov
+Martin Engström (original BitBucket repository)
+Aden Beckitt (2017 Raspbian Jessie rewrite)
