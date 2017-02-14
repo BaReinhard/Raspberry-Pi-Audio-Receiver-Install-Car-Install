@@ -24,7 +24,10 @@ EOT
     amixer cset numid=3 100%
     sleep 1
     pactl set-sink-volume 0 65537
-	pactl set-source-volume $audio_source 64500
+    # Manage volume for proper fading to begin
+    pactl set-source-volume $audio_source 60%
+    	for(i=0;i<30;i++); pactl set-source-volume $audio_source +1%; sleep .1 & done
+	
 
     # loop back this source to the default sink
     handle=$(pactl load-module module-loopback source=$audio_source sink=$audio_sink)
