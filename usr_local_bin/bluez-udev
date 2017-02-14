@@ -31,7 +31,7 @@ EOT
     logger "[$(basename $0)] PulseAudio module-loopback returned handle [$handle]"
     logger "$bt_name"
     
-    #pkill arecord		# Uncomment for Audio Line Input
+    #sudo pkill arecord		# Uncomment for Audio Line Input
 fi
 
 if [ "$action" = "remove" ]; then
