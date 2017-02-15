@@ -12,9 +12,9 @@ function tst {
 
 
 # Update
-tst sudo apt-get update
+tst sudo apt-get update -y
 
 # Upgrade the distro
-tst sudo apt-get dist-upgrade
+tst sudo apt-get upgrade -y
 
 echo "Done! You should reboot now"
