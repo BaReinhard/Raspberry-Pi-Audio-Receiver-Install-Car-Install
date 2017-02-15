@@ -61,8 +61,10 @@ metadata =
 // Advanced parameters for controlling how a Shairport Sync runs
 sessioncontrol = 
 {
-//	run_this_before_play_begins = "/full/path/to/application and args"; // make sure the application has executable permission. It it's a script, include the #!... stuff on the first line
-//	run_this_after_play_ends = "/full/path/to/application and args"; // make sure the application has executable permission. It it's a script, include the #!... stuff on the first line
+//	Uncomment "run_this_before_play_begins" and "run_this_after_play_ends" for Audio Line Input
+
+//	run_this_before_play_begins = "/home/pi/shScripts/shairportstart.sh"; // make sure the application has executable permission. It it's a script, include the #!... stuff on the first line
+//	run_this_after_play_ends = "/home/pi/shScripts/shairportend.sh"; // make sure the application has executable permission. It it's a script, include the #!... stuff on the first line
 //	wait_for_completion = "no"; // set to "yes" to get Shairport Sync to wait until the "run_this..." applications have terminated before continuing
 //	allow_session_interruption = "no"; // set to "yes" to allow another device to interrupt Shairport Sync while it's playing from an existing audio source
 //	session_timeout = 120; // wait for this number of seconds after a source disappears before terminating the session and becoming available again.
@@ -109,6 +111,20 @@ ao =
 
 
 EOT
+cd /home/pi
+mkdir shScripts
+cd shScripts
+cat <<EOT > shairportstart.sh
+#!/bin/sh
+pkill arecord
+exit 0
+EOT
+cat <<EOT > shairportend.sh
+#!/bin/sh
+arecord -D plughw:1 -f dat | aplay -D plughw:1 -f dat&
+exit 0
+EOT
+chmod +x *
 tst echo "It is suggested you reboot your pi."
 
 
