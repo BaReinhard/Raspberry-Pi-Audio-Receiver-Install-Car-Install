@@ -9,20 +9,20 @@ EOT
 sudo cat <<EOT >> /etc/asound.conf
 pcm.pulse {
     type pulse
-    card 0
+    card 1
 }
 ctl.pulse {
     type pulse
-    card 0
+    card 1
 }
 
 pcm.!default {
     type hw
-    card 0
+    card 1
 }
 ctl.!default {
     type hw
-    card 0
+    card 1
 }
 EOT
 
