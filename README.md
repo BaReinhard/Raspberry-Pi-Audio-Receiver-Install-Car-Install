@@ -1,3 +1,5 @@
+#Currently needs two changes before it is fully functional. Need to wait to get my hands on the untouched `/etc/default/isc-dhcp-server` and `/etc/default/hostapd` files before creating a patch
+
 # Changes
 * Use of External Soundcards
 * soxr interpolation with shairport-sync, works well on Raspberry Pi Zero and Raspberry Pi 3, haven't tested on any other boards yet.
