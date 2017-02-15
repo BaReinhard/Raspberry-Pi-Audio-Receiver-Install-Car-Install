@@ -57,11 +57,28 @@ ht_capab=[HT40][SHORT-GI-20][DSSS_CCK-40]
 EOT
 
 # Add patch for /etc/default/hostapd 
-sudo nano /etc/default/hostapd
-DAEMON_CONF="/etc/hostapd/hostapd.conf"
+patch /etc/default/hostapd <<EOT
+@@ -7,7 +7,7 @@
+ # file and hostapd will be started during system boot. An example configuration
+ # file can be found at /usr/share/doc/hostapd/examples/hostapd.conf.gz
+ #
+-#DAEMON_CONF=""
++#DAEMON_CONF="/etc/hostapd/hostapd.conf"
 
-sudo nano /etc/init.d/hostapd
-DAEMON_CONF="/etc/hostapd/hostapd.conf"
+ # Additional daemon options to be appended to hostapd command:-
+ #      -d   show more debug message (-dd for even more)
+EOT
+patch /etc/init.d/hostapd <<EOT
+@@ -16,7 +16,7 @@
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+DAEMON_SBIN=/usr/sbin/hostapd
+DAEMON_DEFS=/etc/default/hostapd
+DAEMON_CONF=
+DAEMON_CONF=/etc/hostapd/hostapd.conf
+NAME=hostapd
+DESC="advanced IEEE 802.11 management"
+PIDFILE=/run/hostapd.pid
+EOT
 
 # Setup dhcp server
 
@@ -94,9 +111,17 @@ max-lease-time 1814400;
 EOT
 
 # Add Patch for /etc/default/isc-dhcp-server
-sudo nano /etc/defaul/isc-dhcp-server
+patch /etc/default/isc-dhcp-server <<EOT
+@@ -18,4 +18,4 @@
 
-INTERFACES="wlan0"
+ # On what interfaces should the DHCP server (dhcpd) server DHCP requests?
+ #      Serparate multiple interfaces with spaces, e.g. "eth0 eth1".
+-INTERFACES=""
++INTERFACES="wlan0"
+EOT
+
+echo "You may now reboot your Pi"
+
 
 
 
