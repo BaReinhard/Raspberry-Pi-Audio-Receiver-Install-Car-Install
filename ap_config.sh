@@ -57,6 +57,11 @@ ht_capab=[HT40][SHORT-GI-20][DSSS_CCK-40]
 EOT
 
 # Add patch for /etc/default/hostapd 
+sudo nano /etc/default/hostapd
+DAEMON_CONF="/etc/hostapd/hostapd.conf"
+
+sudo nano /etc/init.d/hostapd
+DAEMON_CONF="/etc/hostapd/hostapd.conf"
 
 # Setup dhcp server
 
@@ -89,7 +94,9 @@ max-lease-time 1814400;
 EOT
 
 # Add Patch for /etc/default/isc-dhcp-server
+sudo nano /etc/defaul/isc-dhcp-server
 
+INTERFACES="wlan0"
 
 
 
