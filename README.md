@@ -22,7 +22,7 @@ This project has combined several different projects into one, culminating into 
 ```
 sudo apt-get install git
 git clone https://github.com/BaReinhard/Raspberry-Pi-Audio-Receiver-Install-Car-Install.git
-cd Rasp*
+cd Raspberry-Pi-Audio-Receiver-Install-Car-Install
 sudo ./runall.sh
 ```
 
