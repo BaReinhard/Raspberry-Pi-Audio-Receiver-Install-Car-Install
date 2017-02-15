@@ -28,4 +28,7 @@ tst ./airplay_install.sh | tee -a $log
 echo "--------------------------------------------" | tee -a $log
 echo "${MYNAME}" | tst ./airplay_config.sh | tee -a $log
 echo "--------------------------------------------" | tee -a $log
+tst ./ap_install.sh | tee -a $log
+echo "--------------------------------------------" | tee -a $log
+echo "${MYNAME}" | tst ./ap_config.sh | tee -a $log
 echo "Ending at @ `date`" | tee -a $log
