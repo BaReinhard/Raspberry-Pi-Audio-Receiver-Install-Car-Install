@@ -9,6 +9,7 @@
 For the time being, I have not been able to get espeak to work with a soundcard. I will be working to get this working either with espeak or another program.
 
 #Install
+###This will install on the latest Raspbian Jessie, with just the following commands.
 
 ```
 sudo apt-get install git
