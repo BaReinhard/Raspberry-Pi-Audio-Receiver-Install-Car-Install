@@ -5,7 +5,7 @@ name=$(sed 's/\"//g' <<< $NAME)
 if [[ ! $name =~ ^([0-9A-F]{2}[:-]){5}([0-9A-F]{2})$ ]]; then exit 0;  fi
 
 bt_name=`grep Name /var/lib/bluetooth/*/$name/info | awk -F'=' '{print $2}'`
-
+#sudo pkill arecord		# Uncomment for Audio Line Input
 audio_source=bluez_source.$(sed 's/:/_/g' <<< $name)
 
 action=$(expr "$ACTION" : "\([a-zA-Z]\+\).*")
@@ -33,7 +33,7 @@ EOT
     logger "[$(basename $0)] PulseAudio module-loopback returned handle [$handle]"
     logger "$bt_name"
     
-    #sudo pkill arecord		# Uncomment for Audio Line Input
+    
 fi
 
 if [ "$action" = "remove" ]; then
