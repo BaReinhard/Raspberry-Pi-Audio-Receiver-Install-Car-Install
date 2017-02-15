@@ -14,7 +14,7 @@ function tst {
     fi
 }
 #--------------------------------------------------------------------
-
+chmod +x ./*
 echo "Starting @ `date`" | tee -a $log
 echo "--------------------------------------------" | tee -a $log
 tst ./bt_pa_prep.sh | tee -a $log
