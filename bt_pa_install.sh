@@ -11,10 +11,10 @@ function tst {
 #--------------------------------------------------------------------
 
 # Install Pulse Audio & Bluez
-tst sudo apt-get install bluez pulseaudio pulseaudio-module-bluetooth
+tst sudo apt-get install bluez pulseaudio pulseaudio-module-bluetooth -y
 
 # Install dbus for python
-tst sudo apt-get install python-dbus
+tst sudo apt-get install python-dbus -y
 
 # Install espeak
 tst sudo apt-get install -qy espeak
