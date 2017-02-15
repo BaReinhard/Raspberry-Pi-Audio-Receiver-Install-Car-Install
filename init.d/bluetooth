@@ -12,8 +12,8 @@
 
 DESC=bluetoothd
 DAEMON=/usr/libexec/bluetooth/bluetoothd
-SSD_OPTIONS="--oknodo --quiet --exec $DAEMON --plugin=a2dp"
-#SSD_OPTIONS="--oknodo --quiet --exec $DAEMON" #Change to this if you want media control using DBus at the expense of volume control 
+#SSD_OPTIONS="--oknodo --quiet --exec $DAEMON --plugin=a2dp"
+SSD_OPTIONS="--oknodo --quiet --exec $DAEMON" #Change to this if you want media control using DBus at the expense of volume control 
 HCI=hci0
 
 case "${1}" in
