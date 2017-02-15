@@ -9,6 +9,7 @@
 ### How about that run on sentence. TLDR; adenbeckitt created a new repo to get ehsmaes' version to work on Raspbian Jessie. I then forked the repo to add some more dependencies and features. Most of the work for this project has been done by adenbeckitt and ehsmaes.
 
 #Known Issues
+
 *For the time being, I have not been able to get espeak to work with a soundcard. I will be working to get this working either with espeak or another program.
 *Unsure how Android will act on a wireless network without internet, iOS doesn't display the WiFi signals and will use Cellular Data for data requirements. However, iOS devices still can play local music to the Pi without any cellular data.
 
