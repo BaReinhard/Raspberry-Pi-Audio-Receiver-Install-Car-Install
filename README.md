@@ -7,3 +7,13 @@
 
 
 For the time being, I have not been able to get espeak to work with a soundcard. I will be working to get this working either with espeak or another program.
+
+#Install
+
+```
+sudo apt-get install git
+git clone 
+cd Rasp*
+sudo ./runall.sh
+```
+
