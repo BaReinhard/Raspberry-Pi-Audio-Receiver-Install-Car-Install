@@ -14,7 +14,7 @@ This project has combined several different projects into one, culminating into 
 
 * For the time being, I have not been able to get espeak to work with a soundcard. I will be working to get this working either with espeak or another program.
 * Unsure how Android will act on a wireless network without internet, iOS doesn't display the WiFi signals and will use Cellular Data for data requirements. However, iOS devices still can play local music to the Pi without any cellular data.
-* Raspberry Pi Zero will need a WiFi card to use the new Access Point feature, some cards are not compatible with hostapd right out of the box and may require a forked repo of hostapd. If you are using a tp-link usb adapter you can follow the guide here to fix how the current install feature has set this up. I will post the model of the TP-Link usb adapter as soon as I get home. GUIDE: [Pi Zero hostapd Fix](https://bareinhard.github.io/2017/02/09/Setup-Car-Wifi-Raspberry-Pi-Zero-1-2-AP-No-Internet.html)
+* Raspberry Pi Zero will need a WiFi card to use the new Access Point feature, some cards are not compatible with hostapd right out of the box and may require a forked repo of hostapd. If you are using a tp-link usb adapter you can follow the guide here to fix how the current install feature has set this up. I will post the model of the TP-Link usb adapter as soon as I get home. GUIDE: [Pi Zero hostapd Fix](https://bareinhard.github.io/2017/02/15/Fix-hostapd-Raspberry-Pi-Zero.html)
 
 ## Install
 #### This will install on the latest Raspbian Jessie, with just the following commands.
