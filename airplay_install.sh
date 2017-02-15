@@ -21,11 +21,11 @@ tst ./configure --sysconfdir=/etc --with-alsa --with-avahi --with-ssl=openssl --
 sleep 1
 tst make
 sleep 1
-tst getent group shairport-sync &>/dev/null || sudo groupadd -r shairport-sync >/dev/null
-tst getent passwd shairport-sync &> /dev/null || sudo useradd -r -M -g shairport-sync -s /usr/bin/nologin -G audio shairport-sync >/dev/null
+getent group shairport-sync &>/dev/null || sudo groupadd -r shairport-sync >/dev/null
+getent passwd shairport-sync &> /dev/null || sudo useradd -r -M -g shairport-sync -s /usr/bin/nologin -G audio shairport-sync >/dev/null
 sleep 1
-tst sudo make install
+tst make install
 sleep 1
-tst sudo systemctl enable shairport-sync
+tst systemctl enable shairport-sync
 
 echo "Done! You should reboot now"
