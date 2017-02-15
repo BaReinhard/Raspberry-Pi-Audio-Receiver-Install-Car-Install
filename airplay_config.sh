@@ -13,7 +13,7 @@ function tst {
 #--------------------------------------------------------------------
 
 # Configure shairplay
-sudo cat <<EOT > /etc/shairport-sync.conf
+cat <<EOT > /etc/shairport-sync.conf
 // Sample Configuration File for Shairport Sync
 // Commented out settings are generally the defaults, except where noted.
 
