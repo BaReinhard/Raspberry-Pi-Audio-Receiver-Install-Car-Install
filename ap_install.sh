@@ -28,7 +28,10 @@ import logging.handlers
 import dbus
 import dbus.service
 import dbus.mainloop.glib
-import gobject
+try:
+    import gobject
+except ImportError:
+    from gi.repository import GObject as gobject
 
 LOG_LEVEL = logging.INFO
 #LOG_LEVEL = logging.DEBUG
@@ -104,6 +107,6 @@ StandardOutput=null
 WantedBy=multi-user.target
 Alias=volume-watcher.service
 EOT
-systemctl enable volume-watcher.service
+systemctl enable volume-watcher
 
 
