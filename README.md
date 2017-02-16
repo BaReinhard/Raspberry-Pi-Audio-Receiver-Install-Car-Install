@@ -1,4 +1,8 @@
 # Raspberry Pi Audio Receiver Install - Car Deployment Version
+
+###### If you are wanting a Home Version Use the following Repo and follow the install instructions in the README.md
+[HOME VERSION](https://github.com/BaReinhard/Raspberry-Pi-Audio-Receiver-Install)
+
 This project has combined several different projects into one, culminating into a plug-and-play Audio Receiver project. It incorporates A2DP, AirPlay, and Auxillary line input as possible ways to stream music to your Raspberry Pi. When paired with a sound card or HiFi audio DAC, with the exception of Aux Line Input, you get high quality stereo audio. The main difference between [Raspberry Pi Audio Receiver](https://github.com/BaReinhard/Raspberry-Pi-Audio-Receiver-Install) and [Raspberry Pi Audio Receiver Car Install](https://github.com/BaReinhard/Raspberry-Pi-Audio-Receiver-Install-Car-Install) is the addition of an Internet-less Wireless Network which allows for the Car Install to generate its own Wireless Network allowing users to connect to the network and stream audio via AirPlay. While this project will work without the use of a soundcard (with some minor configuration), it is suggested to use a sound card for easier install and better audio experience.
 ## Changes
 * Use of External Soundcards
