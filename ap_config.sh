@@ -36,25 +36,7 @@ patch /etc/dhcpcd.conf <<EOT
 +denyinterfaces wlan0
 EOT
 
-# Setup AP
-cat <<EOT >/etc/hostapd/hostapd.conf
-interface=wlan0
-driver=nl80211
-ssid=$MYNAME
-hw_mode=g
-channel=6
-macaddr_acl=0
-auth_algs=1
-ignore_broadcast_ssid=0
-wpa=2
-wpa_passphrase=changethis
-wpa_key_mgmt=WPA-PSK
-#wpa_pairwise=TKIP      # You better do not use this weak encryption (only used by old client devices
-rsn_pairwise=CCMP
-ieee80211n=1          # 802.11n support
-wmm_enabled=1         # QoS support
-ht_capab=[HT40][SHORT-GI-20][DSSS_CCK-40]
-EOT
+
 
 # Add patch for /etc/default/hostapd 
 patch /etc/default/hostapd <<EOT
