@@ -114,7 +114,7 @@ EOT
 patch /etc/default/isc-dhcp-server <<EOT
 @@ -18,4 +18,4 @@
 
- # On what interfaces should the DHCP server (dhcpd) server DHCP requests?
+ # On what interfaces should the DHCP server (dhcpd) serve DHCP requests?
  #      Separate multiple interfaces with spaces, e.g. "eth0 eth1".
 -INTERFACES=""
 +INTERFACES="wlan0"
