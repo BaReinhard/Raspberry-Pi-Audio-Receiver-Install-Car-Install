@@ -1,5 +1,5 @@
 #!/bin/bash
-read -p "Airplay device name: " MYNAME
+read -p "Wifi Network name: " MYNAME
 #--------------------------------------------------------------------
 function tst {
     echo "===> Executing: $*"
