@@ -12,7 +12,7 @@ function tst {
 
 
 # setup the config files
-tst cat <<EOT >/etc/network/interfaces
+cat <<EOT >/etc/network/interfaces
 source-directory /etc/network/interfaces.d
 auto lo
 iface lo inet loopback
@@ -37,7 +37,7 @@ patch /etc/dhcpcd.conf <<EOT
 EOT
 
 # Setup AP
-tst cat <<EOT >/etc/hostapd/hostapd.conf
+cat <<EOT >/etc/hostapd/hostapd.conf
 interface=wlan0
 driver=nl80211
 ssid=$MYNAME
@@ -63,7 +63,7 @@ patch /etc/default/hostapd <<EOT
  # file can be found at /usr/share/doc/hostapd/examples/hostapd.conf.gz
  #
 -#DAEMON_CONF=""
-+#DAEMON_CONF="/etc/hostapd/hostapd.conf"
++DAEMON_CONF="/etc/hostapd/hostapd.conf"
 
  # Additional daemon options to be appended to hostapd command:-
  #      -d   show more debug message (-dd for even more)
@@ -82,7 +82,7 @@ EOT
 
 # Setup dhcp server
 
-tst cat <<EOT >>/etc/dhcp/dhcpd.conf
+cat <<EOT >>/etc/dhcp/dhcpd.conf
 ddns-update-style none;
 ignore client-updates;
 authoritative;
@@ -115,7 +115,7 @@ patch /etc/default/isc-dhcp-server <<EOT
 @@ -18,4 +18,4 @@
 
  # On what interfaces should the DHCP server (dhcpd) server DHCP requests?
- #      Serparate multiple interfaces with spaces, e.g. "eth0 eth1".
+ #      Separate multiple interfaces with spaces, e.g. "eth0 eth1".
 -INTERFACES=""
 +INTERFACES="wlan0"
 EOT
