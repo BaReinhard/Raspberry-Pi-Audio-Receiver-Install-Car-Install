@@ -95,12 +95,11 @@ EOT
 # Add Patch for /etc/default/isc-dhcp-server
 patch /etc/default/isc-dhcp-server <<EOT
 @@ -18,4 +18,4 @@
-
+ 
  # On what interfaces should the DHCP server (dhcpd) serve DHCP requests?
- #      Separate multiple interfaces with spaces, e.g. "eth0 eth1".
+ #	Separate multiple interfaces with spaces, e.g. "eth0 eth1".
 -INTERFACES=""
 +INTERFACES="wlan0"
-
 EOT
 
 echo "You may now reboot your Pi"
