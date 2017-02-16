@@ -118,6 +118,7 @@ patch /etc/default/isc-dhcp-server <<EOT
  #      Separate multiple interfaces with spaces, e.g. "eth0 eth1".
 -INTERFACES=""
 +INTERFACES="wlan0"
+
 EOT
 
 echo "You may now reboot your Pi"
