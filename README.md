@@ -20,9 +20,11 @@ This project has combined several different projects into one, culminating into 
 #### This will install on the latest Raspbian Jessie, with just the following commands.
 
 ```
-sudo apt-get install git
-git clone https://github.com/BaReinhard/Raspberry-Pi-Audio-Receiver-Install-Car-Install.git
-cd Raspberry-Pi-Audio-Receiver-Install-Car-Install
-sudo ./runall.sh
+pi@raspberrypi:~/ $ sudo apt-get install git
+pi@raspberrypi:~/ $ git clone https://github.com/BaReinhard/Raspberry-Pi-Audio-Receiver-Install-Car-Install.git
+pi@raspberrypi:~/ $ cd Raspberry-Pi-Audio-Receiver-Install-Car-Install
+pi@raspberrypi:~/Raspberry-Pi-Audio-Receiver-Install-Car-Install $ sudo ./runall.sh
+Device name: Choose Device Name
+Device WiFi Password: Choose Password Name
 ```
 
