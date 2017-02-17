@@ -351,6 +351,8 @@ cat <<EOT > /etc/default/isc-dhcp-server
 #	Separate multiple interfaces with spaces, e.g. "eth0 eth1".
 INTERFACES=“wlan0”
 EOT
+systemctl enable hostapd
+systemctl enable isc-dhcp-server
 
 echo "You may now reboot your Pi"
 
