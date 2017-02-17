@@ -349,7 +349,7 @@ cat <<EOT > /etc/default/isc-dhcp-server
 
 # On what interfaces should the DHCP server (dhcpd) serve DHCP requests?
 #	Separate multiple interfaces with spaces, e.g. "eth0 eth1".
-INTERFACES=“wlan0”
+INTERFACES="wlan0"
 EOT
 systemctl enable hostapd
 systemctl enable isc-dhcp-server
