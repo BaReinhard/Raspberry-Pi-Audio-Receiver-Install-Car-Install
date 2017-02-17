@@ -12,7 +12,7 @@ function tst {
 
 
 # Install Dependencies
-tst sudo apt-get install hostapd isc-dhcp-server -y
+tst apt-get install hostapd isc-dhcp-server -y
 
 cd /home/pi
 mkdir pyScripts
