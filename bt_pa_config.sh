@@ -28,33 +28,33 @@ function tst {
 
 tst cd `dirname $0`
 
-tst sudo echo "PRETTY_HOSTNAME=$BT_NAME" >> /tmp/machine-info
-tst sudo cp /tmp/machine-info /etc
+tst echo "PRETTY_HOSTNAME=$BT_NAME" >> /tmp/machine-info
+tst cp /tmp/machine-info /etc
 
-tst sudo cp init.d/pulseaudio /etc/init.d
-tst sudo chmod +x /etc/init.d/pulseaudio
-tst sudo update-rc.d pulseaudio defaults
+tst cp init.d/pulseaudio /etc/init.d
+tst chmod +x /etc/init.d/pulseaudio
+tst update-rc.d pulseaudio defaults
 
-tst sudo cp init.d/bluetooth /etc/init.d
-tst sudo chmod +x /etc/init.d/bluetooth
-tst sudo update-rc.d bluetooth defaults
+tst cp init.d/bluetooth /etc/init.d
+tst chmod +x /etc/init.d/bluetooth
+tst update-rc.d bluetooth defaults
 
-tst sudo cp init.d/bluetooth-agent /etc/init.d
-tst sudo chmod +x /etc/init.d/bluetooth-agent
-tst sudo update-rc.d bluetooth-agent defaults
+tst cp init.d/bluetooth-agent /etc/init.d
+tst chmod +x /etc/init.d/bluetooth-agent
+tst update-rc.d bluetooth-agent defaults
 
-tst sudo cp usr_local_bin/bluez-udev /usr/local/bin
-tst sudo chmod 755 /usr/local/bin/bluez-udev
+tst cp usr_local_bin/bluez-udev /usr/local/bin
+tst chmod 755 /usr/local/bin/bluez-udev
 
-tst sudo cp usr_local_bin/simple-agent.autotrust /usr/local/bin
-tst sudo chmod 755 /usr/local/bin/simple-agent.autotrust
+tst cp usr_local_bin/simple-agent.autotrust /usr/local/bin
+tst chmod 755 /usr/local/bin/simple-agent.autotrust
 
-tst sudo cp usr_local_bin/say.sh /usr/local/bin
-tst sudo chmod 755 /usr/local/bin/say.sh
+tst cp usr_local_bin/say.sh /usr/local/bin
+tst chmod 755 /usr/local/bin/say.sh
 
-tst sudo cp usr_local_bin/bluezutils.py /usr/local/bin
+tst cp usr_local_bin/bluezutils.py /usr/local/bin
 
-tst sudo cp misc_setup/daemon.conf /etc/pulse
+tst cp misc_setup/daemon.conf /etc/pulse
 
 cat<< EOT >/boot/config.txt 
 # For more options and information see
