@@ -43,10 +43,11 @@ patch /etc/default/hostapd <<EOT
  # file and hostapd will be started during system boot. An example configuration
  # file can be found at /usr/share/doc/hostapd/examples/hostapd.conf.gz
  #
--#DAEMON_CONF=""
+-DAEMON_CONF=""
 +DAEMON_CONF="/etc/hostapd/hostapd.conf"
+ 
  # Additional daemon options to be appended to hostapd command:-
- #      -d   show more debug message (-dd for even more)
+ # 	-d   show more debug messages (-dd for even more)
 EOT
 patch /etc/init.d/hostapd <<EOT
 @@ -16,7 +16,7 @@
