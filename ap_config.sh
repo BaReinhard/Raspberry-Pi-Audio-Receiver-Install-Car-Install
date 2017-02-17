@@ -50,14 +50,14 @@ patch /etc/default/hostapd <<EOT
 EOT
 patch /etc/init.d/hostapd <<EOT
 @@ -16,7 +16,7 @@
-PATH=/sbin:/bin:/usr/sbin:/usr/bin
-DAEMON_SBIN=/usr/sbin/hostapd
-DAEMON_DEFS=/etc/default/hostapd
-DAEMON_CONF=
-DAEMON_CONF=/etc/hostapd/hostapd.conf
-NAME=hostapd
-DESC="advanced IEEE 802.11 management"
-PIDFILE=/run/hostapd.pid
+ PATH=/sbin:/bin:/usr/sbin:/usr/bin
+ DAEMON_SBIN=/usr/sbin/hostapd
+ DAEMON_DEFS=/etc/default/hostapd
+-DAEMON_CONF=
++DAEMON_CONF=/etc/hostapd/hostapd.conf
+ NAME=hostapd
+ DESC="advanced IEEE 802.11 management"
+ PIDFILE=/run/hostapd.pid
 EOT
 
 # Setup AP
