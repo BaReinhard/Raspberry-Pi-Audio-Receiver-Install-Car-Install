@@ -1,5 +1,6 @@
 #!/bin/bash
 read -p "Wifi Network name: " MYNAME
+read -p "Wifi Password: " WIFIPASS
 #--------------------------------------------------------------------
 function tst {
     echo "===> Executing: $*"
