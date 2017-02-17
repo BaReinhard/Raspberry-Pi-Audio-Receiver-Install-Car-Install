@@ -12,7 +12,7 @@ function tst {
 
 # Install shairplay-sync from source
 
-tst sudo apt-get -y install build-essential git autoconf automake libtool libdaemon-dev libasound2-dev libpopt-dev libconfig-dev avahi-daemon libavahi-client-dev libssl-dev libpolarssl-dev libsoxr-dev
+tst apt-get -y install build-essential git autoconf automake libtool libdaemon-dev libasound2-dev libpopt-dev libconfig-dev avahi-daemon libavahi-client-dev libssl-dev libpolarssl-dev libsoxr-dev
 tst cd /$HOME
 tst git clone https://github.com/mikebrady/shairport-sync.git
 tst cd shairport-sync
