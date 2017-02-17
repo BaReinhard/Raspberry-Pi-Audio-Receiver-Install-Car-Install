@@ -31,7 +31,7 @@ echo "${MYNAME}" | tst ./airplay_config.sh | tee -a $log
 echo "--------------------------------------------" | tee -a $log
 tst ./ap_install.sh | tee -a $log
 echo "--------------------------------------------" | tee -a $log
-echo "${MYNAME}" | tst ./ap_config.sh | tee -a $log
+{ echo "${MYNAME}"; echo "${WIFIPASS}";} | tst ./ap_config.sh | tee -a $log
 # Setup AP
 cat <<EOT >/etc/hostapd/hostapd.conf
 interface=wlan0
