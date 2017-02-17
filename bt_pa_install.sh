@@ -11,20 +11,20 @@ function tst {
 #--------------------------------------------------------------------
 
 # Install Pulse Audio & Bluez
-tst sudo apt-get install bluez pulseaudio pulseaudio-module-bluetooth -y
+tst apt-get install bluez pulseaudio pulseaudio-module-bluetooth -y
 
 # Install dbus for python
-tst sudo apt-get install python-dbus -y
+tst apt-get install python-dbus -y
 
 # Install espeak
-tst sudo apt-get install -qy espeak
+tst apt-get install -qy espeak
 
 # Create users and priviliges for Bluez-Pulse Audio interaction - most should already exist
-tst sudo addgroup --system pulse
-tst sudo adduser --system --ingroup pulse --home /var/run/pulse pulse
-tst sudo addgroup --system pulse-access
-tst sudo adduser pulse audio
-tst sudo adduser root pulse-access
-tst sudo adduser pulse lp
+tst addgroup --system pulse
+tst adduser --system --ingroup pulse --home /var/run/pulse pulse
+tst addgroup --system pulse-access
+tst adduser pulse audio
+tst adduser root pulse-access
+tst adduser pulse lp
 
 echo "Done! You should reboot now"
