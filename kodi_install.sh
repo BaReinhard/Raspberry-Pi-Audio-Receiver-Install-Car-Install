@@ -38,5 +38,9 @@ SUBSYSTEM=="vchiq",  GROUP="video", MODE="0660"
 EOT
 usermod -a -G input kodi
 
+cd /home/kodi/.kodi/addons
+wget plugin.program.indigo-1.0.2.zip
+unzip plugin.program.indig*
+
 
 exit 0
