@@ -24,10 +24,10 @@ patch /etc/default/kodi << EOT
 
 EOT
 
-
 usermod -a -G input kodi
+echo gpu_mem=256 >> /boot/config.txt
 
-
-
+cd /home/kodi
+wget http://fusion.tvaddons.ag/begin-here/plugin.program.indigo-1.0.2.zip
 
 exit 0
