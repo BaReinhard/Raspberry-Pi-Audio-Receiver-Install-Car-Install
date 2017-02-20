@@ -37,3 +37,4 @@ tst ./kodi_config.sh | tee -a $log
 tst ./lirc_install.sh | tee -a $log
 tst ./lirc_config.sh | tee -a $log
 echo "Ending at @ `date`" | tee -a $log
+reboot
