@@ -208,8 +208,9 @@ rm /home/pi/shScripts/firstrun.sh
 touch /home/pi/shScripts/firstrun.sh
 echo "#!/bin/bash" >> /home/pi/shScripts/firstrun.sh
 echo "exit 0" >> /home/pishScripts/firstrun.sh
+reboot
 EOT
-chmod +x /home/pi/shScirpts/*
+chmod +x /home/pi/shScirpts/firstrun.sh
 
 
 exit 0
