@@ -24,5 +24,24 @@ ctl.!default {
     card 1
 }
 EOT
+sudo cat <<EOT >/boot/config.txt
+# Enable HiFiberry Amp
+#dtoverlay=hifiberry-amp
+
+# Enable HiFiberry DAC Light
+#dtoverlay=hifiberry-dac
+
+# Enable HiFiberry DAC Standard/Pro
+#dtoverlay=hifiberry-dacplus
+
+
+# Enable HiFiberry Digi
+#dtoverlay=hifiberry-digi
+
+# Enable iqaudio-dac
+#dtoverlay=iqaudio-dac
+
+# Enable iqaudio-dat+
+#dtoverlay=iqaudio-dacplus
 
 exit 0
