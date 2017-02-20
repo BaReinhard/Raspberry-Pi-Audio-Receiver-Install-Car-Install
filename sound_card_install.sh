@@ -24,7 +24,7 @@ ctl.!default {
     card 1
 }
 EOT
-sudo cat <<EOT >/boot/config.txt
+sudo cat <<EOT >>/boot/config.txt
 # Enable HiFiberry Amp
 #dtoverlay=hifiberry-amp
 
