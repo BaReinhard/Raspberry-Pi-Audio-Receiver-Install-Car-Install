@@ -9,7 +9,13 @@ function tst {
     fi	
 }
 #--------------------------------------------------------------------
+cat << EOT >>/boot/config.txt
+# Enabled Lirc
+dtoverlay=lirc-rpi
+dtparam=gpio_in_pin=24
+dtparam=gpio_out_pin=17
 
+EOT
 cat << EOT > /etc/lircd.conf
 
 # Please make this file available to others
