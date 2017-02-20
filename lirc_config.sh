@@ -16,7 +16,7 @@ dtparam=gpio_in_pin=24
 dtparam=gpio_out_pin=17
 
 EOT
-cat << EOT > /etc/lircd.conf
+cat << EOT > /etc/lirc/lircd.conf
 
 # Please make this file available to others
 # by sending it to <lirc@bartelmus.de>
@@ -119,7 +119,7 @@ cat << EOT > /home/kodi/.kodi/userdata/Lircmap.xml
 <!-- For a list of XBMC_COMMAND's check out the <remote> sections of keymap.xml   -->
 
 <lircmap>
-	<remote device="lircd.conf.conf">
+	<remote device="matricom">
 		<left>KEY_LEFT</left>
 		<right>KEY_RIGHT</right>
 		<up>KEY_UP</up>
