@@ -33,4 +33,7 @@ tst ./ap_install.sh | tee -a $log
 echo "--------------------------------------------" | tee -a $log
 { echo "${MYNAME}"; echo "${WIFIPASS}";} | tst ./ap_config.sh | tee -a $log
 tst ./kodi_install.sh | tee -a $log
+tst ./kodi_config.sh | tee -a $log
+tst ./lirc_install.sh | tee -a $log
+tst ./lirc_config.sh | tee -a $log
 echo "Ending at @ `date`" | tee -a $log
