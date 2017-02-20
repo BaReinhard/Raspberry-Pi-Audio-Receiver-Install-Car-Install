@@ -171,6 +171,7 @@ cat << EOT > /home/kodi/.kodi/userdata/Lircmap.xml
 		<liveradio>KEY_RADIO</liveradio> 
 	</remote>
 </lircmap>
+EOT
 
 
 exit 0
