@@ -43,5 +43,29 @@ sudo cat <<EOT >/boot/config.txt
 
 # Enable iqaudio-dat+
 #dtoverlay=iqaudio-dacplus
+EOT
 
+cat << EOT >> /etc/modules
+# Hifi Amp+
+#snd_soc_bcm2708
+#bcm2708_dmaengine
+#snd_soc_hifiberry_amp
+
+# Hifi Digi Digi+
+#snd_soc_bcm2708
+#bcm2708_dmaengine
+#snd_soc_hifiberry_digi
+
+# Hifi Standard Pro
+#snd_soc_bcm2708
+#bcm2708_dmaengine
+#snd_soc_pcm512x
+#snd_soc_hifiberry_dacplus
+
+# Hifi Dac Dac+ Light
+#snd_soc_bcm2708
+#bcm2708_dmaengine
+#snd_soc_pcm5102a
+#snd_soc_hifiberry_dac
+EOT
 exit 0
