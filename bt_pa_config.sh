@@ -225,6 +225,7 @@ After=multi-user.target
 
 [Service]
 ExecStart=/usr/bin/python /home/pi/pyScripts/volume-watcher.py
+ExecStop=/bin/kill
 StandardOutput=null
 
 [Install]
