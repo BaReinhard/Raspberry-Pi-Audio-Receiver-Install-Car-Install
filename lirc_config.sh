@@ -106,7 +106,7 @@ LIRCD_CONF="/etc/lirc/lircd.conf"
 LIRCMD_CONF=""
 EOT
 
-cat << EOT > /home/kodi/.kodi/userdata/Lircmap.xml
+cat << EOT > /home/pi/Lircmap.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- This file contains the mapping of LIRC keys to XBMC keys used in Keymap.xml  -->
 <!--                                                                              -->
@@ -178,6 +178,21 @@ cat << EOT > /home/kodi/.kodi/userdata/Lircmap.xml
 	</remote>
 </lircmap>
 EOT
+cat <<EOT >/etc/rc.local
+
+/home/pi/shScripts/firstrun.sh&
+exit 0
+EOT
+
+cat <<EOT >/home/pi/shScripts/firstrun.sh
+#!/bin/bash
+cp /home/pi/Lircmap.xml /home/kodi/.kodi/userdata/Lircmap.xml
+rm /home/pi/shScripts/firstrun.sh
+touch /home/pi/shScripts/firstrun.sh
+echo "#!/bin/bash" >> /home/pi/shScripts/firstrun.sh
+echo "exit 0" >> /home/pishScripts/firstrun.sh
+EOT
+chmod +x /home/pi/shScirpts/*
 
 
 exit 0
