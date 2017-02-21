@@ -218,14 +218,14 @@ if __name__ == "__main__":
 EOT
 chmod +x *
 cd /lib/systemd/system/
-cat << EOT > volume-watcher.service
+cat << 'EOT' > volume-watcher.service
 [Unit]
 Description=Watches Bluetooth for Volume Change
 After=multi-user.target
 
 [Service]
 ExecStart=/usr/bin/python /home/pi/pyScripts/volume-watcher.py
-ExecStop=/bin/kill -9 '$MAINPID'
+ExecStop=/bin/kill -9 $MAINPID
 StandardOutput=null
 
 [Install]
