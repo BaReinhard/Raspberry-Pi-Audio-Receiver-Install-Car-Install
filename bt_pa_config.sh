@@ -28,7 +28,7 @@ function tst {
 
 tst cd `dirname $0`
 
-tst sudo echo "PRETTY_HOSTNAME=$BT_NAME" >> /tmp/machine-info
+sudo echo "PRETTY_HOSTNAME=$BT_NAME" >> /tmp/machine-info
 tst sudo cp /tmp/machine-info /etc
 
 tst sudo cp init.d/pulseaudio /etc/init.d
