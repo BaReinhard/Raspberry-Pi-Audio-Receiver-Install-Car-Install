@@ -9,7 +9,12 @@ This project has combined several different projects into one, culminating into 
 * soxr interpolation with shairport-sync, works well on Raspberry Pi Zero and Raspberry Pi 3, haven't tested on any other boards yet.
 * Works great with Sabrent USB Sound Card, HifiBerry Amp+ (I would not recommend this in a car), and will shortly be testing this with a HifiBerry DAC+ Pro.
 * Creates Internet-less Wireless Network (Setup as an AP) to allow users to connect to the network and use AirPlay 
-* Allows for Audio Line Input, Bluetooth A2DP, and AirPlay. (Audio Line Input, needs some manual configuration as some may choose to forgo "antiquated" hardware. :smirk:
+* Allows for Bluetooth A2DP, AirPlay, and local files played through Kodi.
+* Uses kodi as a GUI, and supports the use of sound cards.
+* Supports Infrared remotes, currently setup for the [Matricom IR Remote.](https://www.amazon.com/Quality-Replacement-Controller-Android-Matricom/dp/B018K0GR12)
+* Uses custom GPIO In and Out pins for Infrared to be used with the HifiBerry Amp.
+* Includes module names for sound cards in `/etc/modules` and includes boot configurations in the `/boot/config.txt` that just need to simply be uncommented.
+
 
 #### This is a further fixed version with the addition of being able to Deploy the project in car without a Wireless Network from my original Raspberry Pi Audio Receive Install repo which was forked from adenbeckitt, with a few changes made for shairport-sync dependencies and configuration files, which is a general fix from ehsmaes' version. This now works with Raspbian Jessie.
 #### How about that run on sentence. TLDR; adenbeckitt created a new repo to get ehsmaes' version to work on Raspbian Jessie. I then forked the repo to add some more dependencies and features. Most of the work for this project has been done by adenbeckitt and ehsmaes.
