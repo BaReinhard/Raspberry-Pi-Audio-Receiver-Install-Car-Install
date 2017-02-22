@@ -197,6 +197,8 @@ _IP=$(hostname -I) || true
 if [ "$_IP" ]; then
   printf "My IP address is %s\n" "$_IP"
 fi
+# Faster boot
+dmseg --console-off
 /home/pi/shScripts/firstrun.sh&
 exit 0
 EOT
@@ -211,6 +213,5 @@ echo "exit 0" >> /home/pishScripts/firstrun.sh
 reboot
 EOT
 chmod +x /home/pi/shScripts/firstrun.sh
-
 
 exit 0
