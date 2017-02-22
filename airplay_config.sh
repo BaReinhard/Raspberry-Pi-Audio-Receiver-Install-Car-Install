@@ -116,12 +116,12 @@ mkdir shScripts
 cd shScripts
 cat <<EOT > shairportstart.sh
 #!/bin/sh
-pkill arecord
+amixer cset numid=3 90%
 exit 0
 EOT
 cat <<EOT > shairportend.sh
 #!/bin/sh
-arecord -D plughw:1 -f dat | aplay -D plughw:1 -f dat&
+amixer cset numid=3 90%
 exit 0
 EOT
 chmod +x *
