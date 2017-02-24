@@ -46,6 +46,8 @@ sudo cat <<EOT >>/boot/config.txt
 EOT
 
 cat << EOT >> /etc/modules
+# These are no longer necessary and do not need to be used. Using them may cause issues with the sound cards.
+
 # Hifi Amp+
 #snd_soc_bcm2708
 #bcm2708_dmaengine
